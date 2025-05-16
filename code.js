@@ -5,7 +5,7 @@ let c = 0;
 while (c < 5) {
   o = Math.floor(Math.random() * 10);
   j = Math.floor(Math.random() * 10);
-  otvet = prompt(`${o} + ${j}`, '');
+  otvet = prompt(`${o} + ${j} (пример ${c + 1}/10)`, '');
   if (parseInt(otvet) === o + j) {
     alert('Верно!');
     count++;
@@ -18,7 +18,7 @@ while (c < 10) {
   o = Math.floor(Math.random() * 10);
   j = Math.floor(Math.random() * 10);
   if (o < j) {
-    otvet = prompt(`${j} - ${o}`, '');
+    otvet = prompt(`${j} - ${o} (пример ${c + 1}/10)`, '');
     if (parseInt(otvet) === j - o) {
       alert('Верно!');
       count++;
@@ -26,7 +26,7 @@ while (c < 10) {
       alert('Неправильно.');
     }
   } else {
-    otvet = prompt(`${o} - ${j}`, '');
+    otvet = prompt(`${o} - ${j} (пример ${c + 1}/10)`, '');
     if (parseInt(otvet) === o - j) {
       alert('Верно!');
       count++;
