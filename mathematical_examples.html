@@ -7,12 +7,17 @@
     <style>
         body {
             display: flex;
+            flex-direction: column; /* Выравнивание по вертикали */
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+        }
+        h1 {
+            margin-bottom: 20px; /* Отступ снизу для заголовка */
+            font-size: 36px; /* Размер шрифта заголовка */
         }
         button {
             background-color: #4CAF50; /* Зеленый фон */
@@ -38,6 +43,7 @@
 </head>
 <body>
     <div class="container">
+        <h1>Примеры</h1> <!-- Текст "Примеры" -->
         <button id="startButton">Старт</button>
         <button id="restartButton" onclick="location.reload();">⟳ Заново</button>
     </div>
