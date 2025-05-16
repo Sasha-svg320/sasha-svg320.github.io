@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Примеры</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #4CAF50; /* Зеленый фон */
+            border: none; /* Убираем границу */
+            color: white; /* Белый текст */
+            padding: 15px 32px; /* Отступы */
+            text-align: center; /* Центрируем текст */
+            text-decoration: none; /* Убираем подчеркивание */
+            display: inline-block; /* Блочный элемент */
+            font-size: 24px; /* Размер шрифта */
+            margin: 4px 2px; /* Отступы */
+            cursor: pointer; /* Указатель при наведении */
+            border-radius: 12px; /* Закругленные углы */
+            transition: background-color 0.3s; /* Плавный переход */
+        }
+        button:hover {
+            background-color: #45a049; /* Цвет при наведении */
+        }
+        #restartButton {
+            display: none; /* Изначально скрываем кнопку "Заново" */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="startButton">Старт</button>
+        <button id="restartButton" onclick="location.reload();">⟳ Заново</button>
+    </div>
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            // Загружаем скрипт
+            const script = document.createElement('script');
+            script.src = 'code.js';
+            script.onload = function() {
+                // Скрываем кнопку "Старт" после завершения выполнения скрипта
+                document.getElementById('startButton').style.display = 'none';
+                
+                // Показываем кнопку "Заново" после завершения выполнения скрипта
+                document.getElementById('restartButton').style.display = 'inline-block';
+            };
+            document.body.appendChild(script);
+        });
+    </script>
+</body>
+</html>
