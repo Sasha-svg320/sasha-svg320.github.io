@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Факты о кошках</title>
+</head>
+<body>
+    <h1 id="catFact">Загрузка факта...</h1>
+
+    <script>
+        // Функция для получения и отображения факта
+        async function loadCatFact() {
+            try {
+                // Запрос к API
+                const response = await fetch('https://meowfacts.herokuapp.com/?lang=rus');
+                const data = await response.json();
+                
+                // Извлекаем текст факта (первый элемент массива data)
+                const factText = data.data[0];
+                
+                // Вставляем в заголовок
+                document.getElementById('catFact').textContent = factText;
+            } catch (error) {
+                // Обработка ошибок
+                document.getElementById('catFact').textContent = 'Ошибка загрузки факта :(';
+                console.error('Ошибка:', error);
+            }
+        }
+
+        // Запускаем при загрузке страницы
+        loadCatFact();
+    </script>
+</body>
+</html>
